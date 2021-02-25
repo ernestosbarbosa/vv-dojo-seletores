@@ -3,7 +3,11 @@
 context('Desafio CSS / XPath', () => {
   beforeEach(() => {
     // Buscando uma geladeira
-    cy.visit('https://www.casasbahia.com.br/geladeira/b')
+    cy.visit('https://www.casasbahia.com.br/geladeira/b', {
+      headers: {
+        "Accept-Encoding": "gzip, deflate"
+      }
+    })
   })
 
   it('Mostre que a geladeira Inverse BRE80AK está na lista utilizando CSS Selector', () => {
